@@ -9,6 +9,7 @@ import { Id } from "@/convex/_generated/dataModel";
 import { Toolbar } from "@/components/toolbar";
 import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";
+import Navbar from "@/app/(marketing)/_components/navbar";
 
 interface DocumentIdPageProps {
   params: {
@@ -57,6 +58,7 @@ const DocumentIdPage = ({ params }: DocumentIdPageProps) => {
 
   return (
     <div className="pb-40">
+      <Navbar />
       <Cover preview url={document.coverImage} />
       <div className="md:max-w-3xl lg:max-w-4xl mx-auto">
         <Toolbar preview initialData={document} />

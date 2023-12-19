@@ -19,38 +19,41 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "z-50 bg-background dark:bg-[#181818] absolute top-0 inset-x-0  flex items-center w-full  justify-between p-4",
+        "z-50 bg-background dark:bg-[#181818] absolute top-0 inset-x-0   w-full  justify-between p-4",
         scrolled && "border-b shadow-sm"
       )}
     >
-      <Logo />
-      <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
-        {isLoading && <Spinner />}
-        {!isAuthenticated && !isLoading && (
-          <>
-            <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
-                Log in
-              </Button>
-            </SignInButton>
-            <div className=" hidden md:block">
+      <div className=" w-full justify-between flex items-center ">
+        <Logo />
+
+        <div className="md:ml-auto md:justify-end justify-between  flex items-center gap-x-2">
+          {isLoading && <Spinner />}
+          {!isAuthenticated && !isLoading && (
+            <>
               <SignInButton mode="modal">
-                <Button size="sm">Get Buzznote free</Button>
+                <Button variant="ghost" size="sm">
+                  Log in
+                </Button>
               </SignInButton>
-            </div>
-          </>
-        )}
-        {isAuthenticated && !isLoading && (
-          <>
-            <div className=" hidden md:block">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/documents">Enter Buzznote</Link>
-              </Button>
-            </div>
-            <UserButton afterSignOutUrl="/" />
-          </>
-        )}
-        <ModeToggle />
+              <div className=" hidden md:block">
+                <SignInButton mode="modal">
+                  <Button size="sm">Get Buzznote free</Button>
+                </SignInButton>
+              </div>
+            </>
+          )}
+          {isAuthenticated && !isLoading && (
+            <>
+              <div className=" hidden md:block">
+                <Button variant="ghost" size="sm" asChild>
+                  <Link href="/documents">Enter Buzznote</Link>
+                </Button>
+              </div>
+              <UserButton afterSignOutUrl="/" />
+            </>
+          )}
+          <ModeToggle />
+        </div>
       </div>
     </div>
   );

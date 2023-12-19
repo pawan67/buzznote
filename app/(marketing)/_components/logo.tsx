@@ -11,7 +11,7 @@ const font = Poppins({
 
 const Logo = () => {
   return (
-    <Link href="/" className=" hidden md:flex items-center gap-x-2">
+    <Link href="/" className=" flex  items-center gap-x-2">
       <Image
         src="/logo.svg"
         height="40"
