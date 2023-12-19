@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "z-50 bg-background dark:bg-[#181818] absolute top-0 inset-x-0   w-full  justify-between p-4",
+        "z-50 bg-background dark:bg-[#181818] absolute top-0 inset-x-0   w-full  justify-between p-4 py-3",
         scrolled && "border-b shadow-sm"
       )}
     >
